@@ -1,11 +1,13 @@
+import ProductCard from "../common/productCard/ProductCard";
 
-
-const ItemList = ({greeting}) => {
+const ItemList = ({ items }) => {
   return (
-    <div>
-        <h1>{greeting}</h1>
-        </div>
-  )
-}
+    <section style={{width:"100%" , display: "flex " , justifyContent: "space-evenly", flexWrap:"wrap" , paddingTop:"50px"}}>
+      {items.map((item) => (
+        <ProductCard key={item.id} item={item} />
+      ))}
+    </section>
+  );
+};
 
-export default ItemList
+export default ItemList;
