@@ -53,7 +53,7 @@ export const products = [
 
     stock: 2,
 
-    description: "Estas son los mejores guantes",
+    description: "Estas son los mejores guantes amateurs",
 
     category: "guantes",
 

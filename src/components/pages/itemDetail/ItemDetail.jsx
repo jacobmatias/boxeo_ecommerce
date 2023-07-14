@@ -1,8 +1,11 @@
 
 
-const ItemDetail = () => {
+const ItemDetail = ({product , agregarAlCarrito}) => {
   return (
-    <div>ItemDetail</div>
+    <div>
+      <h1>{product.title}</h1>
+      <h2>{product.price}</h2>
+    </div>
   )
 }
 
