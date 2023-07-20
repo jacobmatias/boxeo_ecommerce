@@ -20,15 +20,15 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 10 }}>
-            <Link to={"/"}>BALBOA'S STORE</Link>
+            <Link to={"/"} color="white" >BALBOA'S STORE</Link>
             <Grid>
             
               <ul className="cointainerCategories">
               <Link to={"/category/guantes"}> 
-              <li>GUANTES</li>  
+              <li color="white">GUANTES</li>  
               </Link>
               <Link to={"/category/indumentaria"}>
-              <li>INDUMENTARIA</li>
+              <li color="white">INDUMENTARIA</li>
               </Link>
               </ul>
               

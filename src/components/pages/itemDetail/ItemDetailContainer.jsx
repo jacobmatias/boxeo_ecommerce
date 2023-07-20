@@ -24,9 +24,9 @@ const ItemDetailContainer = () => {
     console.log(data);
   };
   return (
-    <div>
+    
       <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} />
-    </div>
+   
   );
 };
 

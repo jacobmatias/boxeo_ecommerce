@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ item }) => {
   return (
     <Card sx={{ width: 345 }}>
-      {/* <Link to={`/itemDetail/${item.id}`}> */}
+      
       <CardMedia sx={{ height: 140 }} image={item.img} title={item.title} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
