@@ -1,4 +1,4 @@
-import * as React from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -24,10 +24,10 @@ const Navbar = () => {
             <Grid>
             
               <ul className="cointainerCategories">
-              <Link to={"/category/:categoryId"}> 
+              <Link to={"/category/guantes"}> 
               <li>GUANTES</li>  
               </Link>
-              <Link to={"/category/:categoryId"}>
+              <Link to={"/category/indumentaria"}>
               <li>INDUMENTARIA</li>
               </Link>
               </ul>
