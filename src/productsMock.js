@@ -6,7 +6,7 @@ export const products = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 10,
 
     description: "Esta es la mejor remera",
 
@@ -21,7 +21,7 @@ export const products = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 5,
 
     description: "Estas son las mejores zapatillas de boxeo",
 
@@ -36,7 +36,7 @@ export const products = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 3,
 
     description: "Estas son guantes pro",
 
@@ -51,7 +51,7 @@ export const products = [
 
     price: 15000,
 
-    stock: 2,
+    stock: 1,
 
     description: "Estas son los mejores guantes amateurs",
 

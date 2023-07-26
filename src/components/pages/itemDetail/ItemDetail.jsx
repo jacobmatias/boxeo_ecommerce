@@ -1,5 +1,5 @@
 import CounterContainer from "../../common/counter/CounterContainer"
-import CartContainer from "../cart/CartContainer"
+
 
 
 const ItemDetail = ({product , agregarAlCarrito}) => {
