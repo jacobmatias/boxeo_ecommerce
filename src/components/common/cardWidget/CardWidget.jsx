@@ -7,7 +7,7 @@ const CardWidget = () => {
   return (
     <div>
       <Link to={"/cart"}>
-      <Badge badgeContent={4} color="primary">
+      <Badge badgeContent={0} color="primary" showZero>
         <ShoppingCartIcon color="main" sx={{fontSize: 40}}/>
       </Badge>
       </Link>
