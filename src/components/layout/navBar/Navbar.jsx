@@ -1,39 +1,48 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import CardWidget from "../../common/cardWidget/CardWidget";
-import { Grid } from "@mui/material";
-import "./NavBar.css";
-import { Link } from "react-router-dom";
+
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import CardWidget from '../../common/cardWidget/CardWidget';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 10 }}>
-              <Link to={"/"} color="white">
-                BALBOA'S STORE
-              </Link>
-              <Grid>
-                <ul className="cointainerCategories">
-                  <Link to={"/category/guantes"}>
-                    <li color="white">GUANTES</li>
-                  </Link>
-                  <Link to={"/category/indumentaria"}>
-                    <li color="white">INDUMENTARIA</li>
-                  </Link>
-                </ul>
-              </Grid>
-            </Typography>
-            <CardWidget />
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </div>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link to={"/"}>
+            Balboa Store
+            </Link>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link to={"/category/guantes"}>
+            Guantes
+            </Link>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Link to={"/category/indumentaria"}>
+            Indumentaria
+            </Link>
+          </Typography>
+          <CardWidget/>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
-};
+}
 
-export default Navbar;
+export default Navbar

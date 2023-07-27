@@ -1,12 +1,15 @@
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
+import { Badge } from "@mui/material";
 
 
 const CardWidget = () => {
   return (
     <div>
       <Link to={"/cart"}>
-      <AddShoppingCartIcon color="inherit" fontSize="large"/>
+      <Badge badgeContent={4} color="primary">
+        <ShoppingCartIcon color="main" sx={{fontSize: 40}}/>
+      </Badge>
       </Link>
     </div>
   );
