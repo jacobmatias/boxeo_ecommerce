@@ -10,7 +10,7 @@ const CartWidget = () => {
 
   return (
     <Link to={"/cart"}>
-      <Badge badgeContent={0} color="primary" showZero>
+      <Badge badgeContent={cart.length} color="primary" showZero>
         <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
       </Badge>
     </Link>
