@@ -1,18 +1,26 @@
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
 
 
-const CardWidget = () => {
+
+const CartWidget = () => {
+
+  const { cart } = useContext( CartContext )
+  
+
   return (
-    <div>
-      <Link to={"/cart"}>
-      <Badge badgeContent={4} color="primary">
-        <ShoppingCartIcon color="main" sx={{fontSize: 40}}/>
-      </Badge>
+    
+      <Link to="/cart" style={{color: "black"}}>
+        <Badge badgeContent={ cart.length } color="primary" showZero>
+          <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
+        </Badge>
       </Link>
-    </div>
+    
   );
 };
 
-export default CardWidget;
+export default CartWidget;
