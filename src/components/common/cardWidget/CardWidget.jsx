@@ -5,21 +5,15 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 
-
-
 const CartWidget = () => {
-
-  const { cart } = useContext( CartContext )
-  
+  const { cart } = useContext(CartContext);
 
   return (
-    
-      <Link to="/cart" style={{color: "black"}}>
-        <Badge badgeContent={ cart.length } color="primary" showZero>
-          <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
-        </Badge>
-      </Link>
-    
+    <Link to={"/cart"}>
+      <Badge badgeContent={0} color="primary" showZero>
+        <ShoppingCartIcon color="main" sx={{ fontSize: 40 }} />
+      </Badge>
+    </Link>
   );
 };
 
