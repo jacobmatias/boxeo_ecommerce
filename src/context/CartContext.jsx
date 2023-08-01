@@ -33,11 +33,41 @@ const CartContextComponent = ({ children }) => {
     setCart(newArr);
   };
 
+  //se ejecuta una vez x cada elemento 
+  const totalQuantity = () => {
+    let total = cart.reduce((acum,elem) => {
+      return acum + elem.quantity
+    }, 0)
+    return total
+  }
+
+  const totalPrice = () => {
+    let total = cart.reduce ( ( acum , elem) =>{
+      return acum + (elem.price * elem.quantity)
+    },0)
+    return total
+  }
+
+  //dado un id , saber que cantidad hay
+
+  const getQuantityById = (id) =>{
+    
+    let producto = cart.find( (elem) => elem.id=== +id)
+
+    return producto?.quantity 
+    //si el producto es true , pedile la cantidad , sino no trates de avanzar para que el codigo no se rompa,tec rendering
+    //producto ? producto.quantity : producto
+    //si producto existe , que devuelta producto.quantity sino que retorne undefined
+  }
+
   let data = {
     cart,
     addToCart,
     clearCart,
     deleteById,
+    totalQuantity,
+    totalPrice,
+    getQuantityById 
   };
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };

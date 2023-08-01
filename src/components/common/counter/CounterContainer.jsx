@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Counter from "./Counter";
 
-const CounterContainer = ({ agregarAlCarrito, stock }) => {
-  const [counter, setCounter] = useState(1);
+//a las propriedades les podemos poner valores por defecto , ej: stock = 1
+const CounterContainer = ({ agregarAlCarrito, stock,cantidadEnCarrito=1 }) => {
+  const [counter, setCounter] = useState(cantidadEnCarrito);
 
   return (
     <Counter
