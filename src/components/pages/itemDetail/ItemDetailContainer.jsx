@@ -3,6 +3,8 @@ import ItemDetail from "./ItemDetail";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom"
 import { CartContext } from "../../../context/CartContext"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -34,10 +36,25 @@ const ItemDetailContainer = () => {
     };
     
     addToCart(data)
-  };
+    toast.success('Producto agregado al carrito!', {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+    }
 
-  return <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} cantidadEnCarrito={cantidadEnCarrito}/>;
-};
+  return (
+    <>
+  <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} cantidadEnCarrito={cantidadEnCarrito}/>;
+  <ToastContainer/>
+  </>
+  );
 
-export default ItemDetailContainer;
+  }
+  export default ItemDetailContainer;
 
