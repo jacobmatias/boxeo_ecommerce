@@ -1,6 +1,9 @@
 import { Routes,Route } from "react-router-dom";
 import {routes} from "./menuRoutes"
 import Layout from "../layout/Layout";
+import Dashboard from "../pages/dashboard/Dashboard";
+import ProtectedRoutes from "./ProtectedRoutes";
+
 
 
 
@@ -15,6 +18,13 @@ const AppRouter = () => {
           <Route key={id} path={path} element={<Element/>}/>
         ))}
         </Route>
+        
+       {/* Ruta Dashboard privado  */}
+        <Route element={<ProtectedRoutes/>}>
+          <Route path="/dashboard" element={<Dashboard/>}/>
+        </Route>
+    
+    
     </Routes>
   );
 };

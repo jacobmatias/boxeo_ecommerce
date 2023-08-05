@@ -4,6 +4,7 @@ import CartContainer from "../pages/cart/CartContainer";
 import CheckOutContainer from "../pages/checkout/CheckOutContainer";
 
 
+
 export const routes = [
     {
         id:"home",
@@ -27,5 +28,4 @@ export const routes = [
         path:"/checkout",
         Element: CheckOutContainer
     }
-
     ]

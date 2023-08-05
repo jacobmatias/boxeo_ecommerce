@@ -1,26 +1,87 @@
-import { useState } from "react";
-import CheckOut from "./CheckOut";
+import { useContext, useState } from "react";
+import { CartContext } from "../../../context/CartContext";
+import { db } from "../../../firebaseConfig";
+import {
+  addDoc,
+  collection,
+  serverTimestamp,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
+import { Button } from "@mui/material";
 
-const CheckOutContainer = () => {
-  const [userData, setUserData] = (useState = {
+const CheckoutContainer = () => {
+  const { cart, totalPrice } = useContext(CartContext);
+
+  const [orderId, setOrderId] = useState("");
+
+  const [userData, setUserData] = useState({
     name: "",
-    lastname: "",
+    phone: "",
+    email: "",
   });
+  let total = totalPrice();
 
-  
+  const handleSubmit = (evento) => {
+    evento.preventDefault();
 
-  const formulario = (evento) => {
-  evento.preventDefalut();
-  }
 
-  const funcionInput = (event) => {
-    setUserData({...userData,[event.target.name]: event.target.value});
+    let order = {
+      buyer: userData,
+      items: cart,
+      total,
+      date: serverTimestamp(),
+    };
 
-  }
+    // CREAR UNA ORDEN DE COMPRA
+    let ordersCollections = collection(db, "orders"); //(donde lo quiero crear, que quiero crear)
+    addDoc(ordersCollections, order).then((res) => setOrderId(res.id));
 
-  
+    // MODIFICAR TODOS LOS PRODUCTOS EN SU STOCK
+    cart.forEach((elemento) => {
+      updateDoc(doc(db, "products", elemento.id), {
+        stock: elemento.stock - elemento.quantity,
+      });
+    });
+  };
 
-  return <CheckOut formulario={formulario} />;
+  const handleChange = (evento) => {
+    setUserData({ ...userData, [evento.target.name]: evento.target.value });
+  };
+
+  return (
+    <div>
+      <h1>Checkout</h1>
+
+      {!orderId ? (
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="ingrese su nombre"
+            name="name"
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="ingrese su telefono"
+            name="phone"
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="ingrese su email"
+            name="email"
+            onChange={handleChange}
+          />
+          <Button variant="contained" type="submit">
+            Comprar
+          </Button>
+        </form>
+      ) : (
+        <h3>Su numero de compra: {orderId} </h3>
+      )}
+    </div>
+  );
 };
 
-export default CheckOutContainer;
+export default CheckoutContainer;

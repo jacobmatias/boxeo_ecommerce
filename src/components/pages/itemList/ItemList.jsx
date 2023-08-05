@@ -4,11 +4,16 @@ const ItemList = ({ items }) => {
   return (
     <section
       style={{
-        width: "100%",
-        display: "flex ",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        paddingTop: "50px",
+        height:"400px",
+        width: "55%",
+        display: "flex",
+        justifyContent: "center",
+        paddingTop: "15px",
+        borderBlock:"50px",
+        marginLeft:"220px",
+        marginTop:"100px",
+        
+        
       }}
     >
       {items.map((item) => (
