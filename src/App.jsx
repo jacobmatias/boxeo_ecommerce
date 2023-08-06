@@ -3,7 +3,10 @@ import AppRouter from "./components/router/AppRouter";
 import CartContextComponent from "./context/CartContext";
 
 function App() {
+  
   return (
+    
+    
     <BrowserRouter>
       <CartContextComponent>
         <AppRouter />

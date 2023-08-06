@@ -2,13 +2,17 @@ import { Button } from "@mui/material";
 import { db } from "../../../firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
 import { products } from "../../../productsMock";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+
+    const navigate = useNavigate("/");
     
     const rellenarBase= ()=>{
         let refColl=  collection(db,"products")
         products.forEach((prod) => {
             addDoc( refColl,prod )
+            navigate;
         })
     }
     

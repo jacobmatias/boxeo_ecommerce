@@ -7,12 +7,12 @@ import {getFirestore} from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDQDcrc19LmkXx-kwzqbtxkaF1uLYR-6cQ",
-  authDomain: "ecommerce-boxeo.firebaseapp.com",
-  projectId: "ecommerce-boxeo",
-  storageBucket: "ecommerce-boxeo.appspot.com",
-  messagingSenderId: "264992670890",
-  appId: "1:264992670890:web:6c269c128022ad77767cd3"
+  apiKey: import.meta.env.VITE_API_KEY ,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_MESSAGE,
+  appId: import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase

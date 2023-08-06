@@ -3,6 +3,7 @@ import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import CartOff from "./CartOff";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteById, totalPrice } = useContext(CartContext);
@@ -49,7 +50,8 @@ const CartContainer = () => {
 
     </div>
   ) : (
-    <h1>El carrito esta vacio</h1>
+    <CartOff/>
+    
   );
 };
 

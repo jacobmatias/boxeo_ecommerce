@@ -41,7 +41,7 @@ const ItemListContainer = () => {
   {
     // Esto se ejecutaria siempre con el ternario: <h1>Aca van los productos...</h1> 
     <ItemList items={items} />
-  },
+  }
   </>
   )
 };
